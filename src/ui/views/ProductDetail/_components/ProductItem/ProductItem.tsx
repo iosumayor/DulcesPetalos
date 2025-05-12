@@ -1,6 +1,8 @@
 import type { Product } from "../../../../../core/domain/models/Products";
 import styles from "./ProductItem.module.scss";
+import { useLanguageContext } from "../../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 export const ProductItem = ({ product }: { product: Product | undefined }) => {
+  const { translate } = useLanguageContext();
   return (
     <div className={styles.productContainer}>
       <div className={styles.imageContainer}>
@@ -12,14 +14,24 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
       </div>
       <div className={styles.productInfo}>
         <h1>{product?.name}</h1>
-        <p>Precio: {product?.price.toFixed(2)}€</p>
-        <p>Nombre científico: {product?.binomialName}</p>
-        <p>Riegos por semana: {product?.wateringsPerWeek}</p>
         <p>
-          Tipo de fertilizante:{" "}
-          {product?.fertilizerType === "nitrogen" ? "Nitrogenado" : "Fosforado"}
+          {translate("price")}: {product?.price.toFixed(2)}€
         </p>
-        <p>Altura: {product?.heightInCm} cm</p>
+        <p>
+          {translate("binomialName")}: {product?.binomialName}
+        </p>
+        <p>
+          {translate("wateringsPerWeek")}: {product?.wateringsPerWeek}
+        </p>
+        <p>
+          {translate("fertilizerType")}:{" "}
+          {product?.fertilizerType === "nitrogen"
+            ? translate("nitrogen")
+            : translate("phosphorus")}
+        </p>
+        <p>
+          {translate("height")}: {product?.heightInCm} cm
+        </p>
       </div>
     </div>
   );
