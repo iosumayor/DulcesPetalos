@@ -1,4 +1,4 @@
-/////Cambios para hacer subida
+/////Cambios para hacer subida con master
 
 # React + TypeScript + Vite
 
