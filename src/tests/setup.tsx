@@ -3,6 +3,7 @@ import { afterEach, beforeEach, vi } from "vitest";
 import { cleanup, render } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { LanguageProvider } from "../core/contexts/LanguageContext/LanguageProvider";
 
 beforeEach(() => {
   document.body.innerHTML = '<div id="root"></div>';
@@ -30,9 +31,11 @@ export function renderWithProviders(ui: React.ReactElement) {
     queryClient,
     ...render(ui, {
       wrapper: ({ children }: { children: React.ReactNode }) => (
-        <QueryClientProvider client={queryClient}>
-          <BrowserRouter>{children}</BrowserRouter>
-        </QueryClientProvider>
+        <LanguageProvider>
+          <QueryClientProvider client={queryClient}>
+            <BrowserRouter>{children}</BrowserRouter>
+          </QueryClientProvider>
+        </LanguageProvider>
       ),
     }),
   };
@@ -40,7 +43,7 @@ export function renderWithProviders(ui: React.ReactElement) {
 
 export function renderWithNavigation(
   ui: React.ReactElement,
-  initialEntries = ["/"]
+  initialEntries = ["/"],
 ) {
   const queryClient = createTestQueryClient();
 
@@ -48,11 +51,13 @@ export function renderWithNavigation(
     queryClient,
     ...render(ui, {
       wrapper: ({ children }) => (
-        <QueryClientProvider client={queryClient}>
-          <MemoryRouter initialEntries={initialEntries}>
-            {children}
-          </MemoryRouter>
-        </QueryClientProvider>
+        <LanguageProvider>
+          <QueryClientProvider client={queryClient}>
+            <MemoryRouter initialEntries={initialEntries}>
+              {children}
+            </MemoryRouter>
+          </QueryClientProvider>
+        </LanguageProvider>
       ),
     }),
   };

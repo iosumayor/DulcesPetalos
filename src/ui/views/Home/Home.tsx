@@ -2,14 +2,16 @@ import styles from "./Home.module.scss";
 import { useHome } from "./hooks/useHome";
 import { Item } from "./_components/Item/Item";
 import type { Product } from "../../../core/domain/models/Products";
+import { useLanguageContext } from "../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 import { Layout } from "../../layouts/Layout";
 
 export const Home = () => {
   const { isLoading, filteredProducts } = useHome();
+  const { translate } = useLanguageContext();
   return (
     <Layout>
       {isLoading ? (
-        <p>Cargando productos...</p>
+        <p>{translate("loading")}</p>
       ) : (
         <ul className={styles.list}>
           {filteredProducts?.map((product: Product) => (
