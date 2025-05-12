@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh; 
-    padding: 0; 
     box-sizing: border-box; 
     overflow-x: hidden; 
     max-width: 100%; 
@@ -11,4 +10,25 @@
     padding: 0;
     text-align: center;
     background-color: #eeeeee;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+.darkLayoutContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh; 
+    padding: 0; 
+    box-sizing: border-box; 
+    overflow-x: hidden; 
+    max-width: 100%; 
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    background-color: #121212;
+    color: #ffffff;
 }

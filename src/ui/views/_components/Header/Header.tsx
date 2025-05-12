@@ -4,6 +4,7 @@ import { Breadcrumb } from "./_components/Breadcrumb";
 import { LinkTitle } from "../../../_components/LinkTitle";
 import { useLanguageContext } from "../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 import { LanguageSelector } from "./_components/LanguageSelector";
+import { ThemeSelector } from "./_components/ThemeSelector/ThemeSelctor";
 
 export const Header = () => {
   const location = useLocation();
@@ -15,6 +16,7 @@ export const Header = () => {
       <LinkTitle to="/">{translate("homeTitle")}</LinkTitle>
       <Breadcrumb isProductDetail={isProductDetail} />
       <LanguageSelector />
+      <ThemeSelector />
     </div>
   );
 };
