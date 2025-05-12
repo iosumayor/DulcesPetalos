@@ -1,0 +1,13 @@
+.searchBar {
+    width: 40dvh; 
+    max-width: 400px; 
+    height: auto; 
+    min-height: 20px; 
+    border-radius: 5px;
+    margin: 10px auto; 
+    padding: 8px; 
+    
+    @media (max-width: 768px) {
+        max-width: 90%; 
+    }
+}

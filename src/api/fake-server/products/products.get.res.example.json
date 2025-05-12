@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Rosa",
+    "binomialName": "Rosa gallica",
+    "price": 12.99,
+    "imgUrl": "https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?q=80",
+    "wateringsPerWeek": 3,
+    "fertilizerType": "phosphorus",
+    "heightInCm": 60
+  },
+  {
+    "id": 2,
+    "name": "Tulipán",
+    "binomialName": "Tulipa gesneriana",
+    "price": 8.5,
+    "imgUrl": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80",
+    "wateringsPerWeek": 2,
+    "fertilizerType": "phosphorus",
+    "heightInCm": 40
+  },
+  {
+    "id": 3,
+    "name": "Orquídea",
+    "binomialName": "Phalaenopsis amabilis",
+    "price": 24.99,
+    "imgUrl": "https://images.unsplash.com/photo-1610397648930-477b8c7f0943?q=80",
+    "wateringsPerWeek": 1,
+    "fertilizerType": "nitrogen",
+    "heightInCm": 45
+  },
+  {
+    "id": 4,
+    "name": "Girasol",
+    "binomialName": "Helianthus annuus",
+    "price": 7.25,
+    "imgUrl": "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80",
+    "wateringsPerWeek": 4,
+    "fertilizerType": "nitrogen",
+    "heightInCm": 200
+  },
+  {
+    "id": 5,
+    "name": "Margarita",
+    "binomialName": "Bellis perennis",
+    "price": 5.99,
+    "imgUrl": "https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80",
+    "wateringsPerWeek": 2,
+    "fertilizerType": "phosphorus",
+    "heightInCm": 20
+  },
+  {
+    "id": 6,
+    "name": "Cactus Estrella",
+    "binomialName": "Astrophytum asterias",
+    "price": 15.75,
+    "imgUrl": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80",
+    "wateringsPerWeek": 0.5,
+    "fertilizerType": "phosphorus",
+    "heightInCm": 15
+  },
+  {
+    "id": 7,
+    "name": "Lirio",
+    "binomialName": "Lilium candidum",
+    "price": 9.95,
+    "imgUrl": "https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80",
+    "wateringsPerWeek": 2,
+    "fertilizerType": "nitrogen",
+    "heightInCm": 90
+  },
+  {
+    "id": 8,
+    "name": "Lavanda",
+    "binomialName": "Lavandula angustifolia",
+    "price": 11.5,
+    "imgUrl": "https://images.unsplash.com/photo-1471943038886-87c772c31367?q=80",
+    "wateringsPerWeek": 1,
+    "fertilizerType": "nitrogen",
+    "heightInCm": 60
+  }
+]
