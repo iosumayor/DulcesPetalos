@@ -54,3 +54,48 @@ export default tseslint.config({
   },
 })
 ```
+
+
+////Instalacion del proyecto y como iniciarlo 
+
+# Notas importantes
+
+- Se utiliza typescript en el proyecto
+- Utiliza css Modules para los estilos(modules.scss)
+- Los test utilizan Vitest y Testing Library 
+
+# Instalacion del proyecto
+
+1- Clonar el proyecto 
+git clone https://github.com/iosumayor/DulcesPetalos.git
+
+2- Acceder hasta el repositorio del proyecto 
+
+cd DulcesPetalos/sol-app
+
+3- Instalar dependencias 
+
+yarn install
+(Si no tienes yarn)
+# Instalar Yarn globalmente
+npm install -g yarn
+
+#Comandos principales 
+
+# Iniciar servidor de desarrollo
+yarn dev
+
+# Ejecutar tests
+yarn test
+
+# Ejecutar tests con cobertura
+yarn test:coverage
+
+# Construir para producción
+yarn build
+
+# Previsualizar build de producción
+yarn preview
+
+# Ejecutar linter
+yarn lint
