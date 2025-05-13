@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import type { Product } from "../../../../../core/domain/models/Products";
+import {
+  type Product,
+  getFormattedPrice,
+} from "../../../../../core/domain/models/Products";
 import styles from "./Item.module.scss";
 import { getProductDetailRoute } from "../../../../../core/constants/routeConstants";
 export const Item = ({ product }: { product: Product }) => {
@@ -17,7 +20,7 @@ export const Item = ({ product }: { product: Product }) => {
           alt={product.name}
         />
         <h3>{product.name}</h3>
-        <p>{product.price.toFixed(2)}€</p>
+        <p>{getFormattedPrice(product)}</p>
       </div>
     </li>
   );

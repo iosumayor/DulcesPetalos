@@ -1,4 +1,7 @@
-import type { Product } from "../../../../../core/domain/models/Products";
+import {
+  getFormattedPrice,
+  type Product,
+} from "../../../../../core/domain/models/Products";
 import styles from "./ProductItem.module.scss";
 import { useLanguageContext } from "../../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 export const ProductItem = ({ product }: { product: Product | undefined }) => {
@@ -15,7 +18,7 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
       <div className={styles.productInfo}>
         <h1>{product?.name}</h1>
         <p>
-          {translate("price")}: {product?.price.toFixed(2)}€
+          {translate("price")}: {getFormattedPrice(product ?? ({} as Product))}
         </p>
         <p>
           {translate("binomialName")}: {product?.binomialName}
