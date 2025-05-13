@@ -9,7 +9,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   const isHome = useLocation().pathname === "/";
   const { theme } = useThemeContext();
   const [search, setSearch] = useState("");
-  console.log(theme);
   return (
     <div
       className={`${styles.layoutContainer} ${theme === "dark" ? styles.darkLayoutContainer : ""}`}
