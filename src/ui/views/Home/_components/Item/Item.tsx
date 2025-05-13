@@ -5,14 +5,14 @@ import {
 } from "../../../../../core/domain/models/Products";
 import styles from "./Item.module.scss";
 import { getProductDetailRoute } from "../../../../../core/constants/routeConstants";
+import { memo, useCallback } from "react";
 export const Item = ({ product }: { product: Product }) => {
   const navigate = useNavigate();
+  const handleItemClick = useCallback(() => {
+    navigate(getProductDetailRoute(product.id));
+  }, [navigate, product.id]);
   return (
-    <li
-      onClick={() => {
-        navigate(getProductDetailRoute(product.id));
-      }}
-    >
+    <li onClick={handleItemClick}>
       <div className={styles.item}>
         <img
           className={styles.itemImage}
@@ -25,3 +25,5 @@ export const Item = ({ product }: { product: Product }) => {
     </li>
   );
 };
+
+export const ItemComponent = memo(Item);
