@@ -5,9 +5,13 @@ import { getProductById } from "../../../../api/fake-server/products/products.se
 
 export const useProductDetail = () => {
   const { id } = useParams();
-  const { data: product, isLoading } = useQuery<Product>({
+  const {
+    data: product,
+    isLoading,
+    isError,
+  } = useQuery<Product>({
     queryKey: ["product", id],
     queryFn: () => getProductById(Number(id)),
   });
-  return { product, isLoading };
+  return { product, isLoading, isError };
 };
