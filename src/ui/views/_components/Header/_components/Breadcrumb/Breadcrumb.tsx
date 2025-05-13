@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Breadcrumb.module.scss";
 import { useLanguageContext } from "../../../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
+import { ROUTES } from "../../../../../../core/constants/routeConstants";
 export const Breadcrumb = ({
   isProductDetail,
 }: {
@@ -9,7 +10,7 @@ export const Breadcrumb = ({
   const { translate } = useLanguageContext();
   return (
     <div className={styles.breadcrumbContainer}>
-      <Link className={styles.breadcrumbLink} to="/">
+      <Link className={styles.breadcrumbLink} to={ROUTES.HOME}>
         {translate("home")}
       </Link>
       {isProductDetail && (

@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import type { Product } from "../../../../../core/domain/models/Products";
 import styles from "./Item.module.scss";
+import { getProductDetailRoute } from "../../../../../core/constants/routeConstants";
 export const Item = ({ product }: { product: Product }) => {
   const navigate = useNavigate();
   return (
     <li
       onClick={() => {
-        navigate(`/item/${product.id}`);
+        navigate(getProductDetailRoute(product.id));
       }}
     >
       <div className={styles.item}>

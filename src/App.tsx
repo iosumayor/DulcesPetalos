@@ -3,13 +3,14 @@ import { Home } from "./ui/views/Home/Home";
 import { ProductDetail } from "./ui/views/ProductDetail/ProductDetail";
 import { LanguageProvider } from "./core/contexts/LanguageContext/LanguageProvider";
 import { ThemeProvider } from "./core/contexts/ThemeContext/ThemeProvider";
+import { ROUTES } from "./core/constants/routeConstants";
 function App() {
   return (
     <LanguageProvider>
       <ThemeProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/item/:id" element={<ProductDetail />} />
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
         </Routes>
       </ThemeProvider>
     </LanguageProvider>

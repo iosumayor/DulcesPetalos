@@ -5,6 +5,7 @@ import { LinkTitle } from "../../../_components/LinkTitle";
 import { useLanguageContext } from "../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 import { LanguageSelector } from "./_components/LanguageSelector";
 import { ThemeSelector } from "./_components/ThemeSelector/ThemeSelctor";
+import { ROUTES } from "../../../../core/constants/routeConstants";
 
 export const Header = () => {
   const location = useLocation();
@@ -13,7 +14,7 @@ export const Header = () => {
 
   return (
     <div className={styles.headerContainer}>
-      <LinkTitle to="/">{translate("homeTitle")}</LinkTitle>
+      <LinkTitle to={ROUTES.HOME}>{translate("homeTitle")}</LinkTitle>
       <Breadcrumb isProductDetail={isProductDetail} />
       <LanguageSelector />
       <ThemeSelector />
