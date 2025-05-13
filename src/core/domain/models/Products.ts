@@ -8,3 +8,7 @@ export interface Product {
   fertilizerType: "nitrogen" | "phosphorus";
   heightInCm: number;
 }
+
+export const getFormattedPrice = (product: Product): string => {
+  return `${product.price.toFixed(2)}€`;
+};
