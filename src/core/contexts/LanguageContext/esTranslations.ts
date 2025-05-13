@@ -1,6 +1,7 @@
 const esTranslations = {
   homeTitle: "Dulces Petalos",
   loading: "Cargando productos...",
+  error: "Error en la aplicación",
   back: "Volver",
   price: "Precio",
   binomialName: "Nombre científico",
