@@ -6,12 +6,14 @@ import { useLanguageContext } from "../../../core/contexts/LanguageContext/Hooks
 import { Layout } from "../../layouts/Layout";
 
 export const Home = () => {
-  const { isLoading, filteredProducts } = useHome();
+  const { isLoading, filteredProducts, isError } = useHome();
   const { translate } = useLanguageContext();
   return (
     <Layout>
       {isLoading ? (
         <p>{translate("loading")}</p>
+      ) : isError ? (
+        <p>{translate("error")}</p>
       ) : (
         <ul className={styles.list}>
           {filteredProducts?.map((product: Product) => (

@@ -1,6 +1,7 @@
 const enTranslations = {
   homeTitle: "Happy Flowers",
   loading: "Loading products...",
+  error: "Error in the application",
   back: "Back",
   price: "Price",
   binomialName: "Binomial Name",

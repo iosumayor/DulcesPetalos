@@ -5,6 +5,10 @@ export interface Product {
   price: number;
   imgUrl: string;
   wateringsPerWeek: number;
-  fertilizerType: string;
+  fertilizerType: "nitrogen" | "phosphorus";
   heightInCm: number;
 }
+
+export const getFormattedPrice = (product: Product): string => {
+  return `${product.price.toFixed(2)}€`;
+};

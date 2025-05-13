@@ -12,7 +12,7 @@ describe("Item", () => {
       price: 15.99,
       imgUrl: "https://example.com/rosa.jpg",
       wateringsPerWeek: 3,
-      fertilizerType: "Universal",
+      fertilizerType: "nitrogen" as const,
       heightInCm: 50,
     };
 

@@ -5,12 +5,23 @@ import { useState } from "react";
 
 export const useHome = () => {
   const [search, setSearch] = useState("");
-  const { data: dataProducts, isLoading } = useQuery<ProductsDTO>({
+  const {
+    data: dataProducts,
+    isLoading,
+    isError,
+  } = useQuery<ProductsDTO>({
     queryKey: ["products"],
     queryFn: () => getProducts(),
   });
   const filteredProducts = dataProducts?.products.filter((product) =>
-    product.name.toLowerCase().includes(search.toLowerCase())
+    product.name.toLowerCase().includes(search.toLowerCase()),
   );
-  return { dataProducts, isLoading, filteredProducts, search, setSearch };
+  return {
+    dataProducts,
+    isLoading,
+    isError,
+    filteredProducts,
+    search,
+    setSearch,
+  };
 };
