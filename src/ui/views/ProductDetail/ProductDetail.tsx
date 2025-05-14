@@ -1,5 +1,5 @@
 import { useProductDetail } from "./hooks/useProductDetail";
-import { ProductItemComponent } from "./_components/ProductItem/ProductItem";
+import { ProductItem } from "./_components/ProductItem/ProductItem";
 import { Layout } from "../../layouts/Layout";
 import { useLanguageContext } from "../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 export const ProductDetail = () => {
@@ -12,7 +12,7 @@ export const ProductDetail = () => {
       ) : isError ? (
         <p>{translate("error")}</p>
       ) : (
-        <ProductItemComponent product={product} />
+        <ProductItem product={product} />
       )}
     </Layout>
   );

@@ -5,7 +5,7 @@ import {
 } from "../../../../../core/domain/models/Products";
 import styles from "./Item.module.scss";
 import { getProductDetailRoute } from "../../../../../core/constants/routeConstants";
-import { memo, useCallback } from "react";
+import { useCallback } from "react";
 export const Item = ({ product }: { product: Product }) => {
   const navigate = useNavigate();
   const handleItemClick = useCallback(() => {
@@ -25,5 +25,3 @@ export const Item = ({ product }: { product: Product }) => {
     </li>
   );
 };
-
-export const ItemComponent = memo(Item);
