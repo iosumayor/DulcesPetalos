@@ -4,7 +4,7 @@ import {
 } from "../../../../../core/domain/models/Products";
 import styles from "./ProductItem.module.scss";
 import { useLanguageContext } from "../../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
 export const ProductItem = ({ product }: { product: Product | undefined }) => {
   const { translate } = useLanguageContext();
@@ -63,5 +63,3 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
     </div>
   );
 };
-
-export const ProductItemComponent = memo(ProductItem);
