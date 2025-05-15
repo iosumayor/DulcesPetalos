@@ -45,7 +45,7 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         />
       </div>
       <div className={styles.productInfo}>
-        <Text as="h1" variant="heading">
+        <Text as="h1" variant="headingH1">
           {product?.name}
         </Text>
         <Text>

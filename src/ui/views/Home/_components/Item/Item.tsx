@@ -6,6 +6,7 @@ import {
 import styles from "./Item.module.scss";
 import { getProductDetailRoute } from "../../../../../core/constants/routeConstants";
 import { useCallback } from "react";
+import { Text } from "../../../../_components/Text/Text";
 export const Item = ({ product }: { product: Product }) => {
   const navigate = useNavigate();
   useCallback(() => {
@@ -19,8 +20,10 @@ export const Item = ({ product }: { product: Product }) => {
           src={product.imgUrl}
           alt={product.name}
         />
-        <h3>{product.name}</h3>
-        <p>{getFormattedPrice(product)}</p>
+        <Text as="h3" variant="headingH3">
+          {product.name}
+        </Text>
+        <Text>{getFormattedPrice(product)}</Text>
       </Link>
     </li>
   );
