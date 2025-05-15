@@ -1,15 +1,26 @@
 /* eslint-disable react/prop-types */
+import React from "react";
+import cn from "clsx";
+
+import styles from "./Text.module.scss";
 
 interface Props {
-  elementStyle?: "p" | "span" | "div" | "h1" | "h2" | "h3";
+  as?: "p" | "span" | "div" | "h1" | "h2" | "h3";
   children: React.ReactNode;
-  fontSize?: "fontHeadingSize" | "fontPSize";
-  fontColor?: "fontHeadingColor" | "fontPColor";
+  variant?: "heading" | "paragraph";
 }
 
 export const Text: React.FC<Props> = ({
   children,
-  elementStyle: ElementStyle = "p",
-  fontSize = "fontPSize",
-  fontColor = "fontPColor",
-}) => <ElementStyle className={fontSize && fontColor}>{children}</ElementStyle>;
+  as: As = "p",
+  variant = "paragraph",
+}) => (
+  <As
+    className={cn(
+      styles[`font-${variant}-size`],
+      styles[`font-${variant}-color`]
+    )}
+  >
+    {children}
+  </As>
+);
