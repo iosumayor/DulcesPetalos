@@ -44,11 +44,7 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         />
       </div>
       <div className={styles.productInfo}>
-        <Text
-          elementStyle="h1"
-          fontSize="fontHeadingSize"
-          fontColor="fontHeadingColor"
-        >
+        <Text as="h1" variant="heading">
           {product?.name}
         </Text>
         <Text>
