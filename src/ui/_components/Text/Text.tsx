@@ -8,12 +8,18 @@ interface Props {
   as?: "p" | "span" | "div" | "h1" | "h2" | "h3";
   children: React.ReactNode;
   variant?: "headingH1" | "paragraph" | "headingH3";
+  className?: string;
 }
 
 export const Text: React.FC<Props> = ({
   children,
   as: As = "p",
   variant = "paragraph",
+  className,
 }) => {
-  return <As className={cn(styles[`font-${variant}-size`])}>{children}</As>;
+  return (
+    <As className={(cn(styles[`font-${variant}-size`]), className)}>
+      {children}
+    </As>
+  );
 };
