@@ -1,5 +1,6 @@
 import {
   getFormattedPrice,
+  getFormattedHeight,
   type Product,
 } from "../../../../../core/domain/models/Products";
 import styles from "./ProductItem.module.scss";
@@ -30,7 +31,7 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         product?.fertilizerType === "nitrogen"
           ? translate("nitrogen")
           : translate("phosphorus"),
-      heightInCm: product?.heightInCm,
+      heightInCm: getFormattedHeight(product),
     };
   }, [product, translate]);
 
@@ -50,18 +51,18 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         <Text>
           {translate("price")}: {productDetails.price}
         </Text>
-        <p>
+        <Text>
           {translate("binomialName")}: {productDetails?.binomialName}
-        </p>
-        <p>
+        </Text>
+        <Text>
           {translate("wateringsPerWeek")}: {productDetails?.wateringsPerWeek}
-        </p>
-        <p>
+        </Text>
+        <Text>
           {translate("fertilizerType")}:{productDetails?.fertilizerType}
-        </p>
-        <p>
-          {translate("height")}: {productDetails?.heightInCm} cm
-        </p>
+        </Text>
+        <Text>
+          {translate("height")}: {productDetails.heightInCm}
+        </Text>
       </div>
     </div>
   );
