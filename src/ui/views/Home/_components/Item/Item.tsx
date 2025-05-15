@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   type Product,
   getFormattedPrice,
@@ -8,12 +8,12 @@ import { getProductDetailRoute } from "../../../../../core/constants/routeConsta
 import { useCallback } from "react";
 export const Item = ({ product }: { product: Product }) => {
   const navigate = useNavigate();
-  const handleItemClick = useCallback(() => {
+  useCallback(() => {
     navigate(getProductDetailRoute(product.id));
   }, [navigate, product.id]);
   return (
-    <li onClick={handleItemClick}>
-      <div className={styles.item}>
+    <li>
+      <Link to={getProductDetailRoute(product.id)} className={styles.item}>
         <img
           className={styles.itemImage}
           src={product.imgUrl}
@@ -21,7 +21,7 @@ export const Item = ({ product }: { product: Product }) => {
         />
         <h3>{product.name}</h3>
         <p>{getFormattedPrice(product)}</p>
-      </div>
+      </Link>
     </li>
   );
 };
