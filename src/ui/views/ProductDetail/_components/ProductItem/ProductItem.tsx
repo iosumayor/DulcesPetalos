@@ -5,6 +5,7 @@ import {
 import styles from "./ProductItem.module.scss";
 import { useLanguageContext } from "../../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 import { useMemo } from "react";
+import { Text } from "../../../../_components/Text/Text";
 
 export const ProductItem = ({ product }: { product: Product | undefined }) => {
   const { translate } = useLanguageContext();
@@ -43,10 +44,16 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         />
       </div>
       <div className={styles.productInfo}>
-        <h1>{product?.name}</h1>
-        <p>
+        <Text
+          elementStyle="h1"
+          fontSize="fontHeadingSize"
+          fontColor="fontHeadingColor"
+        >
+          {product?.name}
+        </Text>
+        <Text>
           {translate("price")}: {productDetails.price}
-        </p>
+        </Text>
         <p>
           {translate("binomialName")}: {productDetails?.binomialName}
         </p>
