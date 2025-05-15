@@ -7,7 +7,7 @@ import styles from "./Text.module.scss";
 interface Props {
   as?: "p" | "span" | "div" | "h1" | "h2" | "h3";
   children: React.ReactNode;
-  variant?: "heading" | "paragraph";
+  variant?: "headingH1" | "paragraph" | "headingH3";
 }
 
 export const Text: React.FC<Props> = ({
