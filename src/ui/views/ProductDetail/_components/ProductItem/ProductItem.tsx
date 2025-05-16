@@ -1,10 +1,12 @@
 import {
   getFormattedPrice,
+  getFormattedHeight,
   type Product,
 } from "../../../../../core/domain/models/Products";
 import styles from "./ProductItem.module.scss";
 import { useLanguageContext } from "../../../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 import { useMemo } from "react";
+import { Text } from "../../../../_components/Text/Text";
 
 export const ProductItem = ({ product }: { product: Product | undefined }) => {
   const { translate } = useLanguageContext();
@@ -29,7 +31,7 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         product?.fertilizerType === "nitrogen"
           ? translate("nitrogen")
           : translate("phosphorus"),
-      heightInCm: product?.heightInCm,
+      heightInCm: getFormattedHeight(product),
     };
   }, [product, translate]);
 
@@ -43,22 +45,24 @@ export const ProductItem = ({ product }: { product: Product | undefined }) => {
         />
       </div>
       <div className={styles.productInfo}>
-        <h1>{product?.name}</h1>
-        <p>
+        <Text as="h1" variant="headingH1">
+          {product?.name}
+        </Text>
+        <Text>
           {translate("price")}: {productDetails.price}
-        </p>
-        <p>
+        </Text>
+        <Text>
           {translate("binomialName")}: {productDetails?.binomialName}
-        </p>
-        <p>
+        </Text>
+        <Text>
           {translate("wateringsPerWeek")}: {productDetails?.wateringsPerWeek}
-        </p>
-        <p>
+        </Text>
+        <Text>
           {translate("fertilizerType")}:{productDetails?.fertilizerType}
-        </p>
-        <p>
-          {translate("height")}: {productDetails?.heightInCm} cm
-        </p>
+        </Text>
+        <Text>
+          {translate("height")}: {productDetails.heightInCm}
+        </Text>
       </div>
     </div>
   );

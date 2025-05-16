@@ -12,3 +12,7 @@ export interface Product {
 export const getFormattedPrice = (product: Product): string => {
   return `${product.price.toFixed(2)}€`;
 };
+
+export const getFormattedHeight = (product: Product): string => {
+  return `${product.heightInCm} cm`;
+};

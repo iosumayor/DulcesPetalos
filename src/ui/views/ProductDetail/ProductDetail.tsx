@@ -1,6 +1,7 @@
 import { useProductDetail } from "./hooks/useProductDetail";
 import { ProductItem } from "./_components/ProductItem/ProductItem";
 import { Layout } from "../../layouts/Layout";
+import { Text } from "../../_components/Text/Text";
 import { useLanguageContext } from "../../../core/contexts/LanguageContext/Hooks/useLanguageContext";
 export const ProductDetail = () => {
   const { product, isLoading, isError } = useProductDetail();
@@ -8,9 +9,9 @@ export const ProductDetail = () => {
   return (
     <Layout>
       {isLoading ? (
-        <p>{translate("loading")}</p>
+        <Text>{translate("loading")}</Text>
       ) : isError ? (
-        <p>{translate("error")}</p>
+        <Text>{translate("error")}</Text>
       ) : (
         <ProductItem product={product} />
       )}
