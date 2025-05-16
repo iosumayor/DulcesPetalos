@@ -75,9 +75,7 @@ export const Login = () => {
           {errors.password && <Text>{errors.password.message}</Text>}
         </div>
         <div>
-          <button type="submit" onSubmit={handleSubmit(onSubmit)}>
-            Continuar
-          </button>
+          <button type="submit">Continuar</button>
         </div>
       </form>
     </Layout>
