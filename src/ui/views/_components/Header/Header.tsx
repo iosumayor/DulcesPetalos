@@ -9,13 +9,17 @@ import { ROUTES } from "../../../../core/constants/routeConstants";
 
 export const Header = () => {
   const location = useLocation();
+  const pathname = location.pathname;
   const isProductDetail = location.pathname.includes("/item/");
+  const isHome = pathname === ROUTES.HOME;
   const { translate } = useLanguageContext();
 
   return (
     <div className={styles.headerContainer}>
       <LinkTitle to={ROUTES.HOME}>{translate("homeTitle")}</LinkTitle>
-      <Breadcrumb isProductDetail={isProductDetail} />
+      {(isProductDetail || isHome) && (
+        <Breadcrumb isProductDetail={isProductDetail} />
+      )}
       <LanguageSelector />
       <ThemeSelector />
     </div>
